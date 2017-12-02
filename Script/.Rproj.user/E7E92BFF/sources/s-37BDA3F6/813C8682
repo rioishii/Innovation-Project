@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "923351518",
+    "hash" : "308142166",
     "id" : "813C8682",
-    "lastKnownWriteTime" : 1512256707,
-    "last_content_update" : 1512256707541,
+    "lastKnownWriteTime" : 1512256965,
+    "last_content_update" : 1512256965450,
     "path" : "~/Desktop/INFO 201/Assignments/Innovation-Project/Script/server.R",
     "project_path" : "server.R",
     "properties" : {
-        "cursorPosition" : "44,2",
-        "scrollLine" : "37"
+        "cursorPosition" : "58,2",
+        "scrollLine" : "40"
     },
     "relative_order" : 2,
     "source_on_save" : false,

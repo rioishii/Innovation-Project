@@ -57,6 +57,4 @@ myServer <- function(input, output) {
    
   })
   
-  #scale_fill_brewer(palette="Blues") 
-  #delete other fill
 }
