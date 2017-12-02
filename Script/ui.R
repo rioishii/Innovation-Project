@@ -20,8 +20,17 @@ ui <- navbarPage("Earthquake Data 2017",
                         
                       )
                     )
+           ),
+           tabPanel("Map",
+                    sidebarLayout(
+                      sidebarPanel(
+                        
+                      ),
+                      mainPanel(
+                        
+                      )
+                    )
            )
-           
       )
  
 
