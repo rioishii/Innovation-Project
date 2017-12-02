@@ -10,16 +10,21 @@ myServer <- function(input, output) {
 
   ##change the name of maptype to either [terrain] or [satellite]
   maptype <- reactive({
-    switch(input$maptype, "Terrain" = "Terrain", "Satellite" = "Satellite")
+    switch(input$maptype, "Terrain" = "terrain", "Satellite" = "satellite")
   })
   
   
   output$plot1 <- renderPlot({
+  if(input$maptype == "Terrain"){
     mapgilbert <- get_map(location = c(lng = mean(df$lng), 
-                                       lat = mean(df$lat)), zoom = 3, maptype = maptype, scale = 2)
-    plot_1 <- ggmap(mapgilbert) + geom_point(data = df, aes(x = lng, y = lat, fill = "red",
-                                                            alpha = 0.8), size = 1, shape = 21) +
-                                               guides(fill=FALSE, alpha=FALSE, size=FALSE) +
-                                               labs(x = "Longitude", y = "Latitude")
+                                       lat = mean(df$lat)), zoom = 3, maptype = "terrain", scale = 2)
+  }else{
+    mapgilbert <- get_map(location = c(lng = mean(df$lng), 
+                                       lat = mean(df$lat)), zoom = 3, maptype = "satellite", scale = 2)
+  }
+    ggmap(mapgilbert) + geom_point(data = df, aes(x = lng, y = lat, fill = "red",
+                                                  alpha = 0.8), size = 1, shape = 21) +
+      guides(fill=FALSE, alpha=FALSE, size=FALSE) +
+      labs(x = "Longitude", y = "Latitude")
   })
 }

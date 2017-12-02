@@ -24,10 +24,11 @@ ui <- navbarPage("Earthquake Data 2017",
            tabPanel("Map",
                     sidebarLayout(
                       sidebarPanel(
-                        
+                        radioButtons('maptype', "Select a map type:",
+                                     list("Satellite", "Terrain"))
                       ),
                       mainPanel(
-                        
+                        plotOutput('plot1')
                       )
                     )
            )
