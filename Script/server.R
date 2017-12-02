@@ -32,4 +32,31 @@ myServer <- function(input, output) {
         guides(fill=FALSE, alpha=FALSE, size=FALSE) +
         labs(x = "Longitude", y = "Latitude")
     })
+  
+  
+  Depth <- c("< 0", "0 ~ 10", "10 ~ 20","20 ~ 30",">30")
+  pie_df <- mutate(df, "0 ~ 10" = depth < 10 & depth > 0, "10 ~ 20" = depth > 10 & depth < 20, "20 ~ 30" = depth > 20 & depth < 30, ">30" = depth > 30, "< 0" = depth < 0) 
+  newDF<- pie_df[ ,which((names(pie_df) %in% Depth)==TRUE)]
+  value = integer()
+  for (i in Depth) {
+    value[length(value)+1] =  sum(newDF[,i] == TRUE, na.rm = T)
+  }
+  pie_df <- data.frame(Depth, value)
+  
+  output$pie_graph <- renderPlot({
+    if(input$color == 'Colorful') {
+      ggplot(pie_df, aes(x="", y=value, fill=Depth))+
+        geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + scale_fill_brewer(palette="Dark2")  +
+        theme(axis.text.x=element_blank()) + labs(title = "Earthquake Depth Distribution", subtitle = "Depth of the event in kilometers ", y = "", x = "") 
+    } else {
+      ggplot(pie_df, aes(x="", y=value, fill=Depth))+
+        geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) +
+        theme(axis.text.x=element_blank()) + labs(title = "Earthquake Depth Distribution", subtitle = "Depth of the event in kilometers ", y = "", x = "") + 
+        scale_fill_brewer("Blues")
+    }
+   
+  })
+  
+  #scale_fill_brewer(palette="Blues") 
+  #delete other fill
 }

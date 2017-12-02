@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "165250706",
     "id" : "73A7C228",
-    "lastKnownWriteTime" : 1512255682,
-    "last_content_update" : 1512255682776,
+    "lastKnownWriteTime" : 1512256707,
+    "last_content_update" : 1512256707517,
     "path" : "~/Desktop/INFO 201/Assignments/Innovation-Project/Script/ui.R",
     "project_path" : "ui.R",
     "properties" : {
-        "cursorPosition" : "20,24",
-        "scrollLine" : "11"
+        "cursorPosition" : "42,45",
+        "scrollLine" : "30"
     },
     "relative_order" : 1,
     "source_on_save" : false,

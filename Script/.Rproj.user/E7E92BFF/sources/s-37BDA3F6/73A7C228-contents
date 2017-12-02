@@ -32,6 +32,17 @@ ui <- navbarPage("Earthquake Data 2017",
                         plotOutput('map')
                       )
                     )
+           ),
+           tabPanel("Earthquake Depth",
+                    sidebarLayout(
+                      sidebarPanel(
+                        radioButtons('color', "Select theme:",
+                                     list("Colorful", "Ocean"))
+                      ),
+                      mainPanel(
+                        plotOutput('pie_graph')
+                      )
+                    )
            )
       )
  
