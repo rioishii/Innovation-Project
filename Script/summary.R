@@ -1,5 +1,7 @@
 library(dplyr)
 
+df <- read.csv("Data/all_month.csv")
+
 info_function <- function(dataset) {
   ret <- list()
   #amount of earthquakes in the month
@@ -15,3 +17,5 @@ info_function <- function(dataset) {
   ret$max_mag <- max(dataset[,"mag"], na.rm = TRUE)
   return(ret)
 }
+
+Summarize <- info_function(df)
