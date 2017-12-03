@@ -1,4 +1,5 @@
 library(shiny)
+library(shinythemes)
 
 ui <- navbarPage("Earthquake Data 2017",
            tabPanel("Home",
@@ -45,7 +46,7 @@ ui <- navbarPage("Earthquake Data 2017",
                     )
            )
       )
- 
+)
 
 
 shinyUI(ui)

@@ -1,6 +1,7 @@
 library(shiny)
+library(shinythemes)
 
-ui <- navbarPage("Earthquake Data 2017",
+ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
            tabPanel("Home",
                     sidebarLayout(
                       sidebarPanel(
@@ -43,9 +44,26 @@ ui <- navbarPage("Earthquake Data 2017",
                         plotOutput('pie_graph')
                       )
                     )
+           ),
+           tabPanel("Others",
+                    sidebarLayout(
+                      sidebarPanel(
+                        h3("Group Members:"),
+                        p("Duke Fu"),
+                        p("Rio Ishii"),
+                        p("Tanner Le"),
+                        p("Ying Jiang"),
+                        h4("For More Information:"),
+                        a("USGS: Science for Changing World", href='https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php')
+                      ),
+                      mainPanel(
+                        
+                      )
+                    )
            )
+           
       )
- 
+
 
 
 shinyUI(ui)
