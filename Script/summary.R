@@ -1,6 +1,6 @@
 library(dplyr)
 
-df <- read.csv("Data/all_month.csv")
+df <- read.csv("../Data/all_month.csv")
 
 info_function <- function(dataset) {
   ret <- list()
@@ -18,4 +18,4 @@ info_function <- function(dataset) {
   return(ret)
 }
 
-Summarize <- info_function(df)
+summary <- info_function(df)

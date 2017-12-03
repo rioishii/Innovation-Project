@@ -3,7 +3,7 @@ INFO 201(Autumn 2017), final project
 
 Created by *Rio Ishii, Tanner Le, Duke Fu, Ying Jiang*
 
-```{r Summarize.R, echo = FALSE}
+```{r summary, echo=FALSE}
 source("Summarize.R")
 ```
 
@@ -12,13 +12,13 @@ This project's dataset contains **North America's earthquake history** between O
 It is downloaded from [earthquake.sgs.gov](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php).
 
 As an overview, here is a summary of the key variables from the data:
-* amount of earthquakes in the month: `r Summarize$occurances`
-* average of depth of earthquakes: `r Summarize$avg_depth`
-* average latitude: `r Summarize$avg_locaLat`
-* average longitude:`r Summarize$avg_locaLong`
-* location with the most earthquakes: `r Summarize$common_loca`
-* most average mag strength: `r Summarize$avg_mag`
-* strongest mag strength: `r Summarize$max_mag`
+* Amount of earthquakes in the month: `r summary$occurances`
+* Average of depth of earthquakes: `r summary$avg_depth`
+* Average latitude: `r summary$avg_locaLat`
+* Average longitude:`r summary$avg_locaLong`
+* Location with the most earthquakes: `r summary$common_loca`
+* Most average mag strength: `r summary$avg_mag`
+* Strongest mag strength: `r summary$max_mag`
 
 ## About this project
 * Description
