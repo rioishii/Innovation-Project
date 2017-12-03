@@ -4,7 +4,7 @@ INFO 201(Autumn 2017), final project
 Created by *Rio Ishii, Tanner Le, Duke Fu, Ying Jiang*
 
 ```{r summary, echo=FALSE}
-source("summary.R")
+source("scripts/summary.R")
 ```
 
 ## About the dataset
