@@ -53,7 +53,7 @@ As an overview, here is a summary of the key variables from the data:
 
    - **ui.R** defines how the application will be displayed in the browser. In this project, three maps are displayed:
 
-      1. Frequency of magnitude(selecting from 3 - 15 bins)
+      1. Frequency of magnitude(selecting from 3 - 20 bins)
 
       2. Distribution of earthquakes(selecting from 2 types of map)
 
