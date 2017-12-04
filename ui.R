@@ -53,7 +53,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                         "),
                         p(),
                         sliderInput("mag", "Select Magnitude Range:",
-                                    min = 0, max = 10, value = c(3, 5)),
+                                    min = 0, max = 10, value = c(3, 7)),
                         sliderInput("bin", "Select amount of bins:", 
                                     min = 3, max = 20, value = 7)
                       ),
