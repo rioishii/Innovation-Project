@@ -13,7 +13,9 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                           between Oct 22, 2017 and Nov 11, 2017. It is collected by USGS(United States Geographical Survey), 
                           a scientific agency of US government."),
                         p("The dataset can be found through this", a("earthquake.sgs.gov", href = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php"), "link."),
-                        h2("Our Analysis"),
+                        h2("About this Project"),
+                        p("The dataset of North America's earthquake history is used to discover earthquake patterns. 
+                          Natural forecasters will be mainly interested in these patterns, which they may use to predict earthquakes."),
                         p("During our project, we sought to answer three questions:"),
                         p("1. What does the distribution of earthquake magnitude look like?"),
                         p("2. Which region experienced most frequent earthquakes?"),
@@ -51,7 +53,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                         "),
                         p(),
                         sliderInput("bin", "Select amount of bins:", 
-                                    max = 15, min = 3, value = 7),
+                                    max = 20, min = 3, value = 7),
                         p("Lowering amount of bins will categorize more magnitudes under the same bar while,
                           increasing the amount of bins will allow more indivdual bars.")
                       ),
@@ -91,19 +93,22 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                       )
                     )
            ),
-           tabPanel("Others",
+           tabPanel("Source",
                     sidebarLayout(
                       sidebarPanel(
-                        h3("Group Members:"),
-                        p("Duke Fu"),
-                        p("Rio Ishii"),
-                        p("Tanner Le"),
-                        p("Ying Jiang"),
                         h4("For More Information:"),
                         a("USGS: Science for Changing World", href='https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php')
                       ),
                       mainPanel(
-                        
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/donutparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/christmasparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/shuffleparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/scienceparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/dealwithitparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/discoparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/scienceparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/sushiparrot.gif'),
+                        img("", src='http://cultofthepartyparrot.com/parrots/hd/pumpkinparrot.gif')
                       )
                     )
            )
