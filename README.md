@@ -31,7 +31,7 @@ As an overview, here is a summary of the key variables from the data:
 
   - What did distribution of earthquake look like?
   - Which region experienced most frequent earthquakes?
-  - On average, which region got highest magnitude per earthquake?
+  - What does the distribution of earthquake depth look like?
 
 
 * Technical description
