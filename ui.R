@@ -52,8 +52,10 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                         allow the user to know what type of magnitude strength is most likely to occur.
                         "),
                         p(),
+                        sliderInput("mag", "Select Magnitude Range:",
+                                    min = 0, max = 10, value = c(3, 5)),
                         sliderInput("bin", "Select amount of bins:", 
-                                    max = 20, min = 3, value = 7),
+                                    min = 3, max = 20, value = 7),
                         p("Lowering amount of bins will categorize more magnitudes under the same bar while,
                           increasing the amount of bins will allow more indivdual bars.")
                       ),
