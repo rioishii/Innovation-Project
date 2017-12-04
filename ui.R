@@ -55,9 +55,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                         sliderInput("mag", "Select Magnitude Range:",
                                     min = 0, max = 10, value = c(3, 5)),
                         sliderInput("bin", "Select amount of bins:", 
-                                    min = 3, max = 20, value = 7),
-                        p("Lowering amount of bins will categorize more magnitudes under the same bar while,
-                          increasing the amount of bins will allow more indivdual bars.")
+                                    min = 3, max = 20, value = 7)
                       ),
                       mainPanel(
                         plotOutput('mag_freq')
