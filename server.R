@@ -5,7 +5,7 @@ library(ggmap)
 
 myServer <- function(input, output) {
   #Reading in Data then wrangling data
-  df <- read.csv("../Data/all_month.csv")
+  df <- read.csv("Data/all_month.csv")
   df %>% filter(!is.na(mag))
   map_df <- select(df, lng = longitude, lat = latitude)
   
