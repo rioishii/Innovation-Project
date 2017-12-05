@@ -37,6 +37,7 @@ As an overview, here is a summary of the key variables from the data(round to tw
   - ggplot2
   - shiny
   - ggmap
+  - shinythemes
 
 
 ## Analysis
@@ -47,11 +48,11 @@ As an overview, here is a summary of the key variables from the data(round to tw
 
    - **server.R** defines the data that will displayed through UI. The dataset of North America's earthquake history were sorted to make different plots.
 
-   - **ui.R** defines how the application will be displayed in the browser. In this project, three maps are displayed:
+   - **ui.R** defines how the application will be displayed in the browser. In this project, **3** kinds of plots are displayed:
 
-      1. Frequency of magnitude(selecting from 3 - 20 bins)
+      1. Frequency of magnitude(with three changing selections: date range, magnitude range, amount of bins)
 
-      2. Distribution of earthquakes(selecting from 2 types of map)
+      2. Distribution of earthquakes(with two changing selections: map type, magnitude range)
 
       3. Earthquake depth distribution(selecting from 2 color styles)
 
