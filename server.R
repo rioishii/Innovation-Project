@@ -54,9 +54,8 @@ myServer <- function(input, output) {
         theme(axis.text.x=element_blank()) + labs(title = "Earthquake Depth Distribution", subtitle = "Depth of the event in kilometers ", y = "", x = "") 
     } else {
       ggplot(pie_df, aes(x="", y=value, fill=Depth))+
-        geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) +
-        theme(axis.text.x=element_blank()) + labs(title = "Earthquake Depth Distribution", subtitle = "Depth of the event in kilometers ", y = "", x = "") + 
-        scale_fill_brewer("Blues")
+        geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0) + scale_fill_brewer(palette="Blues") +
+        theme(axis.text.x=element_blank()) + labs(title = "Earthquake Depth Distribution", subtitle = "Depth of the event in kilometers ", y = "", x = "") 
     }
    
   })
