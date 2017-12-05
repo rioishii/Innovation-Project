@@ -21,7 +21,7 @@ myServer <- function(input, output) {
                               time >= input$date[1],
                               time <= input$date[2])
     ggplot(filtered, aes(x=mag, color='red')) + 
-      geom_histogram(bins = input$bin) + theme(legend.position="none")
+      geom_histogram(bins = input$bin) + theme(legend.position="none") + ggtitle("Frequency of Magnitude")
   })
   
   output$map <- renderPlot({
@@ -37,7 +37,7 @@ myServer <- function(input, output) {
       ggmap(mapgilbert) + geom_point(data = new_map_df, aes(x = lng, y = lat, fill = "red",
                                                     alpha = 0.8), size = 1, shape = 21) +
         guides(fill=FALSE, alpha=FALSE, size=FALSE) +
-        labs(x = "Longitude", y = "Latitude")
+        labs(x = "Longitude", y = "Latitude") + ggtitle("Location of Occurances")
     })
   
   

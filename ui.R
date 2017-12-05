@@ -7,6 +7,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                       sidebarPanel(
                         h1("Team Innovation Project"),
                         p("Created by", strong("Rio Ishii, Tanner Le, Duke Fu, Ying Jiang")),
+                        p(a("Link", href = "https://github.com/rioishii/Innovation-Project"), "to GitHub repository"),
                         br(),
                         h2("About the Dataset"),
                         p("This project's dataset contains North America's earthquake history 
@@ -87,7 +88,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                     sidebarLayout(
                       sidebarPanel(
                         p(strong("Earthquake Depth Levels")),
-                        p('This pie graph contains all earthquakes based on their depth level. From the graph, 
+                        p('This pie graph contains all earthquakes based on their depth level in kilometers. From the graph, 
                           it is not hard to find out that majority of all earthquakes have depth between 0 to 
                           10 kilometers.'),
                         radioButtons('color', "Select theme:",
