@@ -7,7 +7,7 @@ myServer <- function(input, output) {
   #Reading in Data then wrangling data
   df <- read.csv("Data/all_month.csv")
   df %>% filter(!is.na(mag))
-  map_df <- select(df, lng = longitude, lat = latitude)
+  map_df <- select(df, lng = longitude, lat = latitude, mag)
   
   ##change the name of maptype to either [terrain] or [satellite]
   maptype <- reactive({
@@ -16,20 +16,24 @@ myServer <- function(input, output) {
   
   output$mag_freq <- renderPlot({
     filtered <- df %>% filter(mag >= input$mag[1],
-                              mag <= input$mag[2])
+                              mag <= input$mag[2],
+                              lng < -55 && lng > -170 &&
+                              lat < 90 && lat > -10)
     ggplot(filtered, aes(x=mag, color='red')) + 
       geom_histogram(bins = input$bin) + theme(legend.position="none")
   })
   
   output$map <- renderPlot({
+    new_map_df <- map_df %>% filter(mag >= input$mapMag[1],
+                              mag <= input$mapMag[2])
     if(input$maptype == "Terrain"){
-      mapgilbert <- get_map(location = c(lng = mean(map_df$lng), 
-                                        lat = mean(map_df$lat)), zoom = 3, maptype = "terrain", scale = 2)
+      mapgilbert <- get_map(location = c(lng = mean(-112), 
+                                        lat = mean(50)), zoom = 3, maptype = "terrain", scale = 2)
     }else{
-      mapgilbert <- get_map(location = c(lng = mean(map_df$lng), 
-                                        lat = mean(map_df$lat)), zoom = 3, maptype = "satellite", scale = 2)
+      mapgilbert <- get_map(location = c(lng = mean(new_map_df$lng), 
+                                        lat = mean(new_map_df$lat)), zoom = 3, maptype = "satellite", scale = 2)
     }
-      ggmap(mapgilbert) + geom_point(data = map_df, aes(x = lng, y = lat, fill = "red",
+      ggmap(mapgilbert) + geom_point(data = new_map_df, aes(x = lng, y = lat, fill = "red",
                                                     alpha = 0.8), size = 1, shape = 21) +
         guides(fill=FALSE, alpha=FALSE, size=FALSE) +
         labs(x = "Longitude", y = "Latitude")

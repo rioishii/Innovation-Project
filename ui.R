@@ -72,7 +72,9 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                           area suffers more earthquakes in the given time. Based on the graph, most of the 
                           earthquakes occur around coast region and pacific rim.'),
                         radioButtons('maptype', "Select a map type:",
-                                     list("Terrain", "Satellite"))
+                                     list("Terrain", "Satellite")),
+                        sliderInput("mapMag", "Select Magnitude Range:",
+                                    min = 0, max = 10, value = c(3, 7))
                       ),
                       mainPanel(
                         plotOutput('map')
