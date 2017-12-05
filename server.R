@@ -16,9 +16,7 @@ myServer <- function(input, output) {
   
   output$mag_freq <- renderPlot({
     filtered <- df %>% filter(mag >= input$mag[1],
-                              mag <= input$mag[2],
-                              lng < -55 && lng > -170 &&
-                              lat < 90 && lat > -10)
+                              mag <= input$mag[2])
     ggplot(filtered, aes(x=mag, color='red')) + 
       geom_histogram(bins = input$bin) + theme(legend.position="none")
   })
