@@ -5,8 +5,8 @@ account: rioishii
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 243785
-bundleId: 1115690
+bundleId: 1115913
 url: https://rioishii.shinyapps.io/Innovation-Project/
-when: 1512448192.19359
+when: 1512456885.87105
 asMultiple: FALSE
 asStatic: FALSE

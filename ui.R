@@ -44,18 +44,18 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                       )
                     )
            ),
-           tabPanel("Frequency of Magnitudes",
+           tabPanel("Magnitude Frequency",
                     sidebarLayout(
                       sidebarPanel(
                         p(strong("Frequency of Magnitude")),
                         p("This graph is designed to show the frequency of magnitudes. What this does is
                         allow the user to know what type of magnitude strength is most likely to occur.
                         "),
+                        sliderInput("mag", "Select Magnitude Range:",
+                                    min = 0, max = 10, value = c(3, 7)),
                         dateRangeInput("date", "Select Date Range:",
                                        min = '2017-10-22', max = '2017-11-21',
                                        start = '2017-10-22', end = '2017-11-21'),
-                        sliderInput("mag", "Select Magnitude Range:",
-                                    min = 0, max = 10, value = c(3, 7)),
                         sliderInput("bin", "Select Amount of Bins:", 
                                     min = 3, max = 20, value = 12)
                       ),
