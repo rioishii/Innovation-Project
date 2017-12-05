@@ -54,7 +54,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                         p(),
                         sliderInput("mag", "Select Magnitude Range:",
                                     min = 0, max = 10, value = c(3, 7)),
-                        sliderInput("bin", "Select amount of bins:", 
+                        sliderInput("bin", "Select Amount of Bins:", 
                                     min = 3, max = 20, value = 7)
                       ),
                       mainPanel(
@@ -62,6 +62,7 @@ ui <- navbarPage(theme = shinytheme("slate"),"Earthquake Data 2017",
                       )
                     )
            ),
+           
            tabPanel("Map",
                     sidebarLayout(
                       sidebarPanel(
