@@ -7,6 +7,7 @@ myServer <- function(input, output) {
   #Reading in Data then wrangling data
   df <- read.csv("Data/all_month.csv")
   df %>% filter(!is.na(mag))
+  df$time <- as.Date(df$time)
   map_df <- select(df, lng = longitude, lat = latitude, mag)
   
   ##change the name of maptype to either [terrain] or [satellite]
@@ -16,7 +17,9 @@ myServer <- function(input, output) {
   
   output$mag_freq <- renderPlot({
     filtered <- df %>% filter(mag >= input$mag[1],
-                              mag <= input$mag[2])
+                              mag <= input$mag[2],
+                              time >= input$date[1],
+                              time <= input$date[2])
     ggplot(filtered, aes(x=mag, color='red')) + 
       geom_histogram(bins = input$bin) + theme(legend.position="none")
   })
