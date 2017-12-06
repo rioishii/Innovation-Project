@@ -31,8 +31,8 @@ myServer <- function(input, output) {
       mapgilbert <- get_map(location = c(lng = mean(-112), 
                                         lat = mean(50)), zoom = 3, maptype = "terrain", scale = 2)
     }else{
-      mapgilbert <- get_map(location = c(lng = mean(-112), 
-                                         lat = mean(50)), zoom = 3, maptype = "satellite", scale = 2)
+      mapgilbert <- get_map(location = c(lng = mean(new_map_df$lng), 
+                                        lat = mean(new_map_df$lat)), zoom = 3, maptype = "satellite", scale = 2)
     }
       ggmap(mapgilbert) + geom_point(data = new_map_df, aes(x = lng, y = lat, fill = "red",
                                                     alpha = 0.8), size = 1, shape = 21) +
